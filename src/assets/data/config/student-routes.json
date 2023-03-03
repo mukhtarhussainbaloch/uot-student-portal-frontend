@@ -1,0 +1,21 @@
+[
+
+  {
+    "id":    "CONTACTS_LIST_ITEM",
+    "label": "Profile",
+    "icon":  "person",
+    "route": "person/profile"
+  },
+  {
+    "id":    "CONTACTS_LIST_ITEM",
+    "label": "Results",
+    "icon":  "summarize",
+    "route": "student/result"
+  },
+  {
+    "id":    "CONTACTS_LIST_ITEM",
+    "label": "Finance",
+    "icon":  "account_balance",
+    "route": "student/finance"
+  }
+]

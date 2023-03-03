@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" (ngSubmit)="onUpload()" class="px-8 py-8 fxFlex items-center">
+<!--  fxLayout="column" fxLayoutGap="2%" fxLayoutAlign="center center"  -->
+  <div >
+        <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+        <img [src]="imageUrl" alt="profile picture"
+            *ngIf="imageUrl"
+            style="height: 200px; width:200px; border-radius: 5%; padding: 4px;"
+            >
+        <input
+            type="file"
+            accept="image/png, image/jpeg, image/jpg"
+            (change)="selectFile($event)"
+            #fileSelection
+            class="px-2 hidden">
+            <div>
+                {{fileName || "No file uploaded yet."}}
+
+                 <button type="button" mat-mini-fab
+                    (click)="fileSelection.click()"
+                    color="primary">
+                    <mat-icon>attach_file</mat-icon>
+                 </button>
+             </div>
+
+        <button type="submit"
+            mat-raised-button
+            [disabled]="formGroup.invalid"
+            color="primary"
+            class="px-2 py-4"> Upload </button>
+        <p class="px-4 text-zinc-600 text-xs">Max Image size is: (0.5 MB)</p>
+        <p class="px-4 text-zinc-600 text-xs">File Format: PNG, JPEG, JPG</p>
+    </div>
+</form>
