@@ -1,0 +1,46 @@
+<div class="container mx-auto mt-6">
+  <mat-card class="example-card">
+    <mat-card-header class="m-6">
+      <mat-card-title>Address Information</mat-card-title>
+    </mat-card-header>
+    <hr>
+    <mat-card-content>
+
+      <div *ngFor="let address of addressObservable | async" class="flex flex-col">
+        <div class="grid grid-cols-4 gap-4 my-6">
+          <div class="flex flex-col">
+            <div class="text-lg text-black dark:text-gray-400 mr-8">Address Type</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-gray-600 dark:text-gray-800">{{address.addressType}}</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-black dark:text-gray-400 mr-8">Full Address</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-gray-600 dark:text-gray-800">{{address.fullAddress}}</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-black dark:text-gray-400 mr-8">City</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-gray-600 dark:text-gray-800">{{address.cityVillage}}</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-black dark:text-gray-400 mr-8">Province</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-gray-600 dark:text-gray-800">{{address.provinceState}}</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-black dark:text-gray-400 mr-8">Country</div>
+          </div>
+          <div class="flex flex-col">
+            <div class="text-lg text-gray-600 dark:text-gray-800">{{address.country}}</div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

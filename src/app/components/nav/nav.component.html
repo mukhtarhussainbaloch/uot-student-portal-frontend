@@ -1,0 +1,67 @@
+<mat-toolbar class="flex bg-purple-900 text-zinc-200">
+
+  <mat-toolbar-row class="flex ">
+    <div class="flex items-center gap-2 p-2" >
+      <button mat-icon-button (click)="toggleSidenav.emit()">
+        <mat-icon >menu </mat-icon>
+      </button>
+      <span class="navigation-bar-title"
+            i18n="Navigation Bar|Application Name@@NAVIGATION_BAR_TITLE">
+      University of Turbat
+    </span>
+    </div>
+
+    <div class="flex-1 flex justify-end">
+
+      <button mat-icon-button >
+        <mat-icon > settings </mat-icon>
+      </button>
+
+      <button mat-icon-button >
+        <mat-icon > help</mat-icon>
+      </button>
+
+    </div>
+
+    <ul class="navigation-items">
+
+      <li>
+
+        <button mat-icon-button >
+          <mat-icon > person </mat-icon>
+        </button>
+
+        <mat-menu #auth="matMenu">
+
+          <ng-container >
+
+            <button mat-menu-item >
+              <mat-icon > login</mat-icon>
+              <span i18n="Navigation Bar|Login@@NAVIGATION_BAR_LOGIN">
+                Login
+              </span>
+            </button>
+
+          </ng-container>
+
+          <ng-container >
+
+            <button mat-menu-item >
+              <mat-icon > logout</mat-icon>
+              <span i18n="Navigation Bar|Logout@@NAVIGATION_BAR_LOGOUT">
+                Logout
+              </span>
+            </button>
+
+          </ng-container>
+
+        </mat-menu>
+
+      </li>
+
+    </ul>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
