@@ -1,4 +1,5 @@
-  <mat-card class="example-card">
+<div class="container mx-auto mt-6 max-w-screen-lg">
+  <mat-card >
     <mat-card-header class="m-6">
       <mat-card-title>Personal Information</mat-card-title>
     </mat-card-header>
@@ -9,110 +10,202 @@
         <div class="block p-6 rounded-lg shadow-lg bg-white  ">
           <div class="flex justify-items-start ">
             <div class="flex items-center space-x-4">
-              <img class="w-40 h-40 rounded-full" src="https://portal.campus.uot.edu.pk/sis/Content/img/{{person.image}}" alt="">
-              <div class="font-medium dark:text-white">
-                <div>{{person.firstName + ' '+ person.lastName}}</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">{{person.fatherName}}</div>
-              </div>
+              <img class="w-40 h-40 rounded-full"
+                   src="https://portal.campus.uot.edu.pk/sis/Content/img/{{person.image}}" alt="">
+              <!--              <div class="font-medium dark:text-white">-->
+              <!--                <div>{{person.firstName + ' '+ person.lastName}}</div>-->
+              <!--                <div class="text-sm text-gray-500 dark:text-gray-400">{{person.fatherName}}</div>-->
+              <!--              </div>-->
             </div>
           </div>
         </div>
-<!--        <div class="float-right">-->
-<!--        <mat-form-field appearance="fill">-->
-<!--          <mat-label>Search person by id</mat-label>-->
-<!--          <input matInput [(ngModel)]="searchTerm" />-->
-<!--          <mat-icon matPrefix (click)="loadPerson()">search</mat-icon>-->
-<!--        </mat-form-field>-->
-<!--        </div>-->
+        <!--        <div class="float-right">-->
+        <!--        <mat-form-field appearance="fill">-->
+        <!--          <mat-label>Search person by id</mat-label>-->
+        <!--          <input matInput [(ngModel)]="searchTerm" />-->
+        <!--          <mat-icon matPrefix (click)="loadPerson()">search</mat-icon>-->
+        <!--        </mat-form-field>-->
+        <!--        </div>-->
       </div>
       <hr>
-      <div class="grid grid-cols-4 gap-4 my-6">
+      <!--      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-sans font-bold text-gray-500 dark:text-gray-400 mr-8">Name</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800" >-->
+      <!--            {{person.firstName | uppercase }}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500 dark:text-gray-400 mr-8">Father's Name</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.fatherName | uppercase}}</div>-->
+      <!--        </div>-->
+
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Gender</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.gender | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Date of Birth</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.dateOfBirth | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">CNIC #</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.cnic | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Phone Number</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.contactNumber | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Father/Gaurdian Phone Number</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.gaurdianContactNumber | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Father/Gaurdian CNIC#</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.guardianCnic | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Emgergency Contact Number</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.relationToEc | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Email Address</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.email | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Relation to Emergency Contact</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">Father</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Religion</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.religion | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Domicile</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.domicile | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Nationality</div>-->
+      <!--        </div>-->
+      <!--        <div class="flex flex-col">-->
+      <!--          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.domicile | uppercase}}</div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="flex flex-col">
-          <div class="text-sm font-sans font-bold text-gray-500 dark:text-gray-400 mr-8">Name</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800" >{{person.firstName | uppercase }}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500 dark:text-gray-400 mr-8">Father's Name</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.fatherName | uppercase}}</div>
+          <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.firstName | uppercase }}">
+          </mat-form-field>
         </div>
 
         <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Gender</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.lastName | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.gender | uppercase}}</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Father Name</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.fatherName | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Date of Birth</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.gender | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.dateOfBirth | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.dateOfBirth | uppercase}}</div>
+          <mat-form-field appearance="fill">
+            <mat-label>CNIC #</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.cnic | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.contactNumber | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">CNIC #</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Guardian CNIC #</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.guardianCnic | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Guardian Contact Number</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.gaurdianContactNumber | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-semibold text-gray-600 dark:text-gray-800">{{person.cnic | uppercase}}</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Emergency Contact Number</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.emergencyContactNumber | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Relation to Emergency Contact</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.relationToEc | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Religion</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.religion | uppercase }}">
+          </mat-form-field>
+        </div>
+        <div class="flex flex-col ">
+          <mat-form-field appearance="fill">
+            <mat-label>Domicile</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.domicile | uppercase }}">
+          </mat-form-field>
         </div>
         <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Phone Number</div>
+          <mat-form-field appearance="fill">
+            <mat-label>Nationality</mat-label>
+            <input matInput placeholder="Placeholder" readonly value="{{person.nationality | uppercase }}">
+          </mat-form-field>
         </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.contactNumber | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm font-bold text-gray-500  dark:text-gray-400 mr-8">Father/Gaurdian Phone Number</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.gaurdianContactNumber | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Father/Gaurdian CNIC#</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.guardianCnic | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Emgergency Contact Number</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.relationToEc | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Email Address</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.email | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Relation to Emergency Contact</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">Father</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Religion</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.religion | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Domicile</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.domicile | uppercase}}</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-black dark:text-gray-400 mr-8">Nationality</div>
-        </div>
-        <div class="flex flex-col">
-          <div class="text-sm text-gray-600 dark:text-gray-800">{{person.domicile | uppercase}}</div>
-        </div>
+
+
       </div>
     </mat-card-content>
 
   </mat-card>
+</div>

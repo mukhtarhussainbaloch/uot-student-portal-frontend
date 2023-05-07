@@ -1,88 +1,211 @@
-<div class="relative w-full overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-      <ng-container *ngFor="let column of displayedColumns">
-        <th class="px-6 py-3" *ngIf="column !== 'action'">{{column}}</th>
-      </ng-container>
-      </thead>
-      <tbody>
-      <ng-container *ngFor="let course of courses">
-        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >
-          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            {{course.id}}
-          </th>
-          <td class="px-6 py-4">
-            {{course.courseCode}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.courseTitle}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.creditHourses}}
-          </td>
+<div class="flex items-center justify-center flex-col  ">
+      <div class="flex flex-col">
+        <table mat-table [dataSource]="courses" class="mat-elevation-z8" >
+          <ng-container matColumnDef="id" >
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            <td mat-footer-cell *matFooterCellDef>
+            </td>
+          </ng-container>
 
-          <td class="px-6 py-4">
-            {{course.obtainedMarks}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.totalMarks}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.grade}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.gradePoint}}
-          </td>
-          <td class="px-6 py-4">
-            {{course.gradePoints}}
-          </td>
-        </tr>
-        <tr>
-        </tr>
-  </ng-container>
-      <ng-container *ngIf="semesterCourseSummery as  semesterSummary">
-        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >
-          <th scope="row" colspan="3" class="text-right  px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          Sum Total
-          </th>
-          <td class="px-6 py-4">
-            {{semesterSummary.creditHoursesSum}}
-          </td>
-          <td class="px-6 py-4">
-            {{semesterSummary.obtainedMarksSum}}
-          </td>
-          <td class="px-6 py-4">
-            {{semesterSummary.totalMarksSum}}
-          </td>
-          <td class="px-6 py-4">
-            {{semesterSummary.totalMarksSum}}
-          </td>
+          <!-- Name Column -->
+          <ng-container matColumnDef="courseCode">
+            <th mat-header-cell *matHeaderCellDef class="!bg-neutral-200 font-semibold " > Course Code </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
+            <td mat-footer-cell *matFooterCellDef >
 
-          <td class="px-6 py-4">
-            {{semesterSummary.gradePointSum}}
-          </td>
-          <td class="px-6 py-4">
-            {{semesterSummary.gradePointsSum}}
-          </td>
-        </tr>
-      </ng-container>
-      <tr class="text-xm text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400" >
-        <td class="px-6 py-4 text-sm text-gray-700 uppercase font-semibold" >
-        PERCENTAGE
-        </td>
-        <td class="px-6 py-4" colspan="5">
-          20.0
-        </td>
+            </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="courseTitle">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Course Title </th>
+            <td mat-cell *matCellDef="let element"> {{element.courseTitle}} </td>
+            <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-300">
+              <div class="font-semibold">Summary</div>
+            </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="creditHourses">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Credit Hourses</th>
+            <td mat-cell *matCellDef="let element"> {{element.creditHourses}} </td>
+            <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-200">
+              <div class="flex flex-col">
+                <div class="font-semibold">&Sigma;</div>
+                <div>
+                  {{semesterCourseSummery.creditHoursesSum}}
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="obtainedMarks">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Obtained Marks </th>
+            <td mat-cell *matCellDef="let element"> {{element.obtainedMarks}} </td>
+            <td mat-footer-cell *matFooterCellDef class="!bg-neutral-200" >
+              <div class="flex flex-col">
+                <div class="font-semibold">&Sigma;</div>
+                <div>
+                  {{semesterCourseSummery.obtainedMarksSum}}
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Name Column -->
+          <ng-container matColumnDef="totalMarks">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Total Marks  </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalMarks}} </td>
+            <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-200">
+              <div class="flex flex-col">
+                <div class="font-semibold">&Sigma;</div>
+                <div>
+                  {{semesterCourseSummery.totalMarksSum}}
+                </div>
+              </div>
+            </td>
+          </ng-container>
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="grade">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold !text-center "> Grade </th>
+            <td mat-cell *matCellDef="let element" class="!text-center"> {{element.grade}} </td>
+            <td mat-footer-cell *matFooterCellDef  class="!bg-teal-700 text-white" >
+             <div class="flex flex-col">
+               <div class="font-semibold ">GPA</div>
+               <div> {{calculateGPA().toFixed(2)}} </div>
+             </div>
+
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="remarks">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Remarks </th>
+            <td mat-cell *matCellDef="let element"> Pass </td>
+            <td mat-footer-cell *matFooterCellDef class="!bg-teal-700 text-white" >
+              <div class="flex flex-col">
+                <div class="font-semibold">CGPA</div>
+                <div> {{calculateGPA().toFixed(2)}} </div>
+              </div>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold !text-center "> Status </th>
+            <td mat-cell *matCellDef="let element" class="!text-center"> <button mat-button color="accent">Request Recheck</button> </td>
+            <td mat-footer-cell *matFooterCellDef class="!bg-teal-700 text-white" >
+              <div>Promoted</div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="gradePoints">
+            <th mat-header-cell *matHeaderCellDef  class="font-semibold "> Grade Point </th>
+            <td mat-cell *matCellDef="let element"> {{element.gradePoints}} </td>
+            <td mat-footer-cell *matFooterCellDef class="!bg-neutral-200" >
+              <div class="flex flex-col">
+                <div >&Sigma;</div>
+                {{semesterCourseSummery.gradePointsSum}}
+                <div></div>
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="header-row-first-group">
+            <th mat-header-cell *matHeaderCellDef
+                [attr.colspan]="9"    [style.text-align]="'center'" class="font-bold">
+              {{semester}} Semester
+            </th>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="['header-row-first-group']"></tr>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+        </table>
+      </div>
+</div>
+
+<!--<div class="relative w-full overflow-x-auto shadow-md sm:rounded-lg">-->
+<!--    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">-->
+<!--      <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">-->
+<!--      <ng-container *ngFor="let column of displayedColumns">-->
+<!--        <th class="px-6 py-3" *ngIf="column !== 'action'">{{column}}</th>-->
+<!--      </ng-container>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <ng-container *ngFor="let course of courses">-->
+<!--        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >-->
+<!--          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">-->
+<!--            {{course.id}}-->
+<!--          </th>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.courseCode}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.courseTitle}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.creditHourses}}-->
+<!--          </td>-->
+
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.obtainedMarks}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.totalMarks}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.grade}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.gradePoint}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{course.gradePoints}}-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--        </tr>-->
+<!--  </ng-container>-->
+<!--      <ng-container *ngIf="semesterCourseSummery as  semesterSummary">-->
+<!--        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >-->
+<!--          <th scope="row" colspan="3" class="text-right  px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">-->
+<!--          Sum Total-->
+<!--          </th>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.creditHoursesSum}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.obtainedMarksSum}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.totalMarksSum}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.totalMarksSum}}-->
+<!--          </td>-->
+
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.gradePointSum}}-->
+<!--          </td>-->
+<!--          <td class="px-6 py-4">-->
+<!--            {{semesterSummary.gradePointsSum}}-->
+<!--          </td>-->
+<!--        </tr>-->
+<!--      </ng-container>-->
+<!--      <tr class="text-xm text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400" >-->
+<!--        <td class="px-6 py-4 text-sm text-gray-700 uppercase font-semibold" >-->
+<!--        PERCENTAGE-->
+<!--        </td>-->
+<!--        <td class="px-6 py-4" colspan="5">-->
+<!--          20.0-->
+<!--        </td>-->
+<!--&lt;!&ndash;      </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >&ndash;&gt;-->
+<!--        <td class="px-6 py-4 px-6 py-4 text-sm text-gray-700 uppercase font-semibold" >-->
+<!--          GPA-->
+<!--        </td>-->
+<!--        <td class="px-6 py-4" colspan="4">-->
+<!--          20.0-->
+<!--        </td>-->
 <!--      </tr>-->
-<!--      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700" >-->
-        <td class="px-6 py-4 px-6 py-4 text-sm text-gray-700 uppercase font-semibold" >
-          GPA
-        </td>
-        <td class="px-6 py-4" colspan="4">
-          20.0
-        </td>
-      </tr>
 
-      </tbody>
-    </table>
-  </div>
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </div>-->

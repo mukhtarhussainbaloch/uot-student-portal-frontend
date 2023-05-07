@@ -1,3 +1,5 @@
+import {Address} from "./address";
+
 export interface Person {
   id: string;
   title: string;
@@ -18,4 +20,5 @@ export interface Person {
   nationality: string;
   domicile: string;
   religion: string;
+  addresses: Address[];
 }

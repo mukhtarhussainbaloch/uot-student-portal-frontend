@@ -1,93 +1,95 @@
 <div class="flex flex-col ">
-<app-nav (toggleSidenav)="navigationSidenav.toggle()">
-</app-nav>
-<!--<mat-sidenav-container autosize>-->
+  <app-nav (toggleSidenav)="navigationSidenav.toggle()">
+  </app-nav>
+  <!--<mat-sidenav-container autosize>-->
 
-<mat-sidenav-container >
-  <mat-sidenav #navigationSidenav mode="side" role="navigation" [opened]="false" class="w-1/6">
+  <mat-sidenav-container>
+    <mat-sidenav #navigationSidenav mode="side" role="navigation" [opened]="false" class="w-1/6 ">
 
-    <mat-nav-list>
+      <mat-nav-list>
 
-<!--      <ng-container *ngIf="myWorkRoutes">-->
+        <!--      <ng-container *ngIf="myWorkRoutes">-->
 
-<!--        <h2 matSubheader-->
-<!--            i18n="Sidenav Item|My Work@@MY_WORK_SUB_HEADER">-->
-<!--          My Work-->
-<!--        </h2>-->
+        <!--        <h2 matSubheader-->
+        <!--            i18n="Sidenav Item|My Work@@MY_WORK_SUB_HEADER">-->
+        <!--          My Work-->
+        <!--        </h2>-->
 
-<!--        &lt;!&ndash; Hides the auto highlighting of the first item in the nav list &ndash;&gt;-->
-<!--        <a mat-list-item routerLink="/" style="height: 0;"></a>-->
+        <!--        &lt;!&ndash; Hides the auto highlighting of the first item in the nav list &ndash;&gt;-->
+        <!--        <a mat-list-item routerLink="/" style="height: 0;"></a>-->
 
-<!--        <a *ngFor="let item of myWorkRoutes"-->
-<!--           mat-list-item-->
-<!--           (click)="navigationSidenav.close()"-->
-<!--           [routerLink]="[item.route]"-->
-<!--           routerLinkActive="list-item-active">-->
-<!--          <mat-icon svgIcon="{{ item.icon }}" class="nav-list-icon"></mat-icon>-->
-<!--          {{ item.label }}-->
-<!--        </a>-->
+        <!--        <a *ngFor="let item of myWorkRoutes"-->
+        <!--           mat-list-item-->
+        <!--           (click)="navigationSidenav.close()"-->
+        <!--           [routerLink]="[item.route]"-->
+        <!--           routerLinkActive="list-item-active">-->
+        <!--          <mat-icon svgIcon="{{ item.icon }}" class="nav-list-icon"></mat-icon>-->
+        <!--          {{ item.label }}-->
+        <!--        </a>-->
 
-<!--      </ng-container>-->
+        <!--      </ng-container>-->
 
-<!--      <ng-container *ngIf="customerRoutes">-->
+        <!--      <ng-container *ngIf="customerRoutes">-->
 
-<!--        <h2 matSubheader-->
-<!--            i18n="Sidenav Item|Customers@@CUSTOMERS_SUB_HEADER">-->
-<!--          Customers-->
-<!--        </h2>-->
+        <!--        <h2 matSubheader-->
+        <!--            i18n="Sidenav Item|Customers@@CUSTOMERS_SUB_HEADER">-->
+        <!--          Customers-->
+        <!--        </h2>-->
 
-<!--        <a *ngFor="let item of customerRoutes"-->
-<!--           mat-list-item-->
-<!--           (click)="navigationSidenav.close()"-->
-<!--           [routerLink]="[item.route]"-->
-<!--           routerLinkActive="list-item-active">-->
-<!--          <mat-icon svgIcon="{{ item.icon }}" class="nav-list-icon"></mat-icon>-->
-<!--          {{ item.label }}-->
-<!--        </a>-->
+        <!--        <a *ngFor="let item of customerRoutes"-->
+        <!--           mat-list-item-->
+        <!--           (click)="navigationSidenav.close()"-->
+        <!--           [routerLink]="[item.route]"-->
+        <!--           routerLinkActive="list-item-active">-->
+        <!--          <mat-icon svgIcon="{{ item.icon }}" class="nav-list-icon"></mat-icon>-->
+        <!--          {{ item.label }}-->
+        <!--        </a>-->
 
-<!--      </ng-container>-->
+        <!--      </ng-container>-->
 
-<!--      <h2 matSubheader-->
-<!--          i18n="Sidenav Item|Sales@@SALES_SUB_HEADER">-->
-<!--        Sales-->
-<!--      </h2>-->
-<!--      <h2 matSubheader-->
-<!--          i18n="Sidenav Item|Collateral@@COLLATERAL_SUB_HEADER">-->
-<!--        Collateral-->
-<!--      </h2>-->
-<!--      <h2 matSubheader-->
-<!--          i18n="Sidenav Item|Marketing@@MARKETING_SUB_HEADER">-->
-<!--        Marketing-->
-<!--      </h2>-->
+        <!--      <h2 matSubheader-->
+        <!--          i18n="Sidenav Item|Sales@@SALES_SUB_HEADER">-->
+        <!--        Sales-->
+        <!--      </h2>-->
+        <!--      <h2 matSubheader-->
+        <!--          i18n="Sidenav Item|Collateral@@COLLATERAL_SUB_HEADER">-->
+        <!--        Collateral-->
+        <!--      </h2>-->
+        <!--      <h2 matSubheader-->
+        <!--          i18n="Sidenav Item|Marketing@@MARKETING_SUB_HEADER">-->
+        <!--        Marketing-->
+        <!--      </h2>-->
 
-      <ng-container *ngIf="studentRoutes">
+        <ng-container *ngIf="studentRoutes">
 
-<!--        <h2 matSubheader-->
-<!--            i18n="Sidenav Item|Tools@@TOOLS_SUB_HEADER">-->
-<!--          Student-->
-<!--        </h2>-->
+          <!--        <h2 matSubheader-->
+          <!--            i18n="Sidenav Item|Tools@@TOOLS_SUB_HEADER">-->
+          <!--          Student-->
+          <!--        </h2>-->
 
-<!--        (click)="navigationSidenav.close()"-->
-        <a *ngFor="let item of studentRoutes"
-           mat-list-item
+          <!--        (click)="navigationSidenav.close()"-->
+          <a *ngFor="let item of studentRoutes"
+             mat-list-item
+             [routerLink]="[item.route]"
+             routerLinkActive="list-item-active">
+            <mat-icon matListItemIcon>{{ item.icon }} </mat-icon>
+            <!--          <div class="font-bold"> {{ item.label }} </div>-->
+            <span class="font-bold"> {{ item.label }} </span>
+          </a>
 
-           [routerLink]="[item.route]"
-           routerLinkActive="list-item-active" >
-          <mat-icon matListItemIcon>{{ item.icon }} </mat-icon>
-          <div class="font-bold"> {{ item.label }} </div>
-        </a>
+        </ng-container>
 
-      </ng-container>
+      </mat-nav-list>
 
-    </mat-nav-list>
+    </mat-sidenav>
 
-  </mat-sidenav>
+    <mat-sidenav-content role="main">
+      <div class="justify-items-center mx-5 mt-5">
 
-  <mat-sidenav-content role="main" >
-<div class=" h-full  justify-items-center mx-5 mt-5">
-    <router-outlet></router-outlet>
-</div>
-  </mat-sidenav-content>
+        <router-outlet></router-outlet>
 
-</mat-sidenav-container>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
 </div>

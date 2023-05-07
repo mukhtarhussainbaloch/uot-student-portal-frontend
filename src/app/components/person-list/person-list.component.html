@@ -1,0 +1,116 @@
+<div class="flex items-center flex-col min-h-screen">
+<mat-card class="md:w-[1024px] ">
+  <mat-card-header class="m-6">
+    <mat-card-title>Students</mat-card-title>
+    <mat-card-subtitle>Student List</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+  <div class="flex  flex-col  ">
+  <div>
+    <mat-form-field >
+      <mat-label>Search</mat-label>
+      <input matInput placeholder='Search' #searchInput  style="flex-basis: content; "  autocomplete="off" (keyup)='onSearchTermChanged(searchInput.value)'>
+      <button *ngIf="searchInput.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchInput.value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+    <div *ngIf="dataSource.loading$ | async ">
+      <mat-spinner *ngIf="dataSource.loading$ | async"></mat-spinner>
+    </div>
+  <div class="flex flex-col">
+    <mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements" >
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row" (click)="onSelect(row.id)">{{row.id}}</mat-cell>>
+      </ng-container>
+
+      <!-- CNIC Column -->
+      <ng-container matColumnDef="cnic">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>CNIC</mat-header-cell>>
+        <mat-cell *matCellDef="let row">
+          <a [routerLink]="['/employees',row.id]">{{row.cnic}} </a>
+        </mat-cell>>
+      </ng-container>
+
+<!--      &lt;!&ndash; Title Column &ndash;&gt;-->
+<!--      <ng-container matColumnDef="title">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">{{row.title}}</mat-cell>-->
+<!--      </ng-container>-->
+<!--      &lt;!&ndash; First Name Column &ndash;&gt;-->
+<!--      <ng-container matColumnDef="firstName">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">{{row.firstName}}</mat-cell>-->
+<!--      </ng-container>-->
+<!--      &lt;!&ndash; Last Name Column &ndash;&gt;-->
+<!--      <ng-container matColumnDef="lastName">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">{{row.lastName}}</mat-cell>-->
+<!--      </ng-container>-->
+      <!-- Full Name Column -->
+      <ng-container matColumnDef="fullName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.firstName }} {{row.lastName === "null" ? '' :row.lastName}}</mat-cell>
+      </ng-container>
+      <!-- Father Name Column -->
+      <ng-container matColumnDef="fatherName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Father's Name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.fatherName}}</mat-cell>
+      </ng-container>
+      <!-- Date of Birth Column -->
+<!--      <ng-container matColumnDef="dateOfBirth">-->
+<!--        <mat-header-cell *matHeaderCellDef mat-sort-header>Date of Birth</mat-header-cell>-->
+<!--        <mat-cell *matCellDef="let row">{{row.dateOfBirth}}</mat-cell>-->
+<!--      </ng-container>-->
+
+      <!-- Date of Gender Column -->
+      <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.gender}}</mat-cell>
+      </ng-container>
+      <!-- Details Popup -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" class="nav-item nav-link-edit" [routerLink]="['/employees',row.id,'edit']">
+            <mat-icon>launch</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" class="nav-item nav-link-edit" (click)="onDelete(row)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" class="nav-item nav-link-edit" [routerLink]="['/employee/profile',row.id]">
+            <mat-icon>forward</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+      <!-- loading  Column -->
+      <ng-container matColumnDef="loading" >
+        <mat-footer-cell *matFooterCellDef colspan="6" style="display:flex; justify-content:center;">
+          <div class="spinner-container" *ngIf="dataSource.loading$ | async" fxFlexAlign="center">
+            <mat-spinner></mat-spinner>
+          </div>
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">row</mat-row>
+      <mat-footer-row *matFooterRowDef="['loading']"></mat-footer-row>
+
+
+    </mat-table>
+    <mat-paginator #paginator
+                   [length]='pageInfo?.totalElements'
+                   [pageIndex]="0"
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5,25, 50, 100, 250]"
+                   showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>
+
+  </mat-card-content>
+</mat-card>
+</div>

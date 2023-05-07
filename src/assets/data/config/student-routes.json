@@ -4,7 +4,7 @@
     "id":    "CONTACTS_LIST_ITEM",
     "label": "Profile",
     "icon":  "person",
-    "route": "person/profile"
+    "route": "student/profile"
   },
   {
     "id":    "CONTACTS_LIST_ITEM",
@@ -17,5 +17,11 @@
     "label": "Finance",
     "icon":  "account_balance",
     "route": "student/finance"
+  },
+  {
+    "id":    "CONTACTS_LIST_ITEM",
+    "label": "List",
+    "icon":  "list",
+    "route": "student/list"
   }
 ]

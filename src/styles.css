@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +8,7 @@
 @layer base {
   html {
     font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
   }
 }
 

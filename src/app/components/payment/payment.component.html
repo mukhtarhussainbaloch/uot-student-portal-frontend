@@ -1,0 +1,11 @@
+<div>
+  <table mat-table [dataSource]="dataSourceTransaction" class="mat-elevation-z8" multiTemplateDataRows>
+          <ng-container matColumnDef="{{innerColumn}}" *ngFor="let innerColumn of displayedColumnsTransaction" >
+            <th mat-header-cell *matHeaderCellDef [style.background-color]="'#5f7f51'" [style.color]="'white'"> {{innerColumn}} </th>
+            <td mat-cell *matCellDef="let element"> {{element[innerColumn]}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsTransaction"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsTransaction;"></tr>
+        </table>
+  </div>
+
