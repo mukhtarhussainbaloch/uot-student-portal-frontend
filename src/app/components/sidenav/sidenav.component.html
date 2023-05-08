@@ -4,7 +4,7 @@
   <!--<mat-sidenav-container autosize>-->
 
   <mat-sidenav-container>
-    <mat-sidenav #navigationSidenav mode="side" role="navigation" [opened]="false" class="w-1/6 ">
+    <mat-sidenav #navigationSidenav mode="side" role="navigation" [opened]="showDrawer" class="w-1/6 ">
 
       <mat-nav-list>
 
@@ -74,7 +74,7 @@
              routerLinkActive="list-item-active">
             <mat-icon matListItemIcon>{{ item.icon }} </mat-icon>
             <!--          <div class="font-bold"> {{ item.label }} </div>-->
-            <span class="font-bold"> {{ item.label }} </span>
+            <span class="font-sans font-bold"> {{ item.label }} </span>
           </a>
 
         </ng-container>

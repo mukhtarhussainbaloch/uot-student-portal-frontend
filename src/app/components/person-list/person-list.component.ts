@@ -84,6 +84,7 @@ export class PersonListComponent implements OnInit, AfterViewInit {
     'actions',
   ];
   data: any;
+  advanceSearch: boolean = false;
   constructor(
     private router: Router,
     private personInfoService: PersonInfoService
@@ -142,5 +143,9 @@ export class PersonListComponent implements OnInit, AfterViewInit {
 
   onProfile(id: number) {
     this.router.navigate(['/employees', id]);
+  }
+
+  showAdvanceSearch() {
+    this.advanceSearch = !this.advanceSearch;
   }
 }

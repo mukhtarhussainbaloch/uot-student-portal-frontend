@@ -23,7 +23,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class PersonInfoService {
-  private apiBaseUrl = 'http://localhost:8080/api/v1/people/search';
+  private apiBaseUrl = 'http://localhost:8080/api/v1/people';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -74,7 +74,9 @@ export class PersonInfoService {
     pageIndex: number,
     pageSize: number
   ): Observable<PagedPerson> {
-    const requestUrl = `${this.apiBaseUrl}?filter=${filter}&sortOrder=${sortDirection}&page=${pageIndex}&size=${pageSize}`;
+    const requestUrl = `${
+      this.apiBaseUrl + '/search'
+    }?filter=${filter}&sortOrder=${sortDirection}&page=${pageIndex}&size=${pageSize}`;
     console.log(requestUrl);
     return this.httpClient.get<PagedPerson>(requestUrl).pipe(
       // map((res: any) => {

@@ -5,6 +5,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { StudentResultComponent } from './components/student-result/student-result.component';
 import { StudentFeeComponent } from './components/student-fee/student-fee.component';
 import { PersonListComponent } from './components/person-list/person-list.component';
+import { AdvanceSearchComponent } from './components/advance-search/advance-search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'student/result', component: StudentResultComponent },
   { path: 'student/finance', component: StudentFeeComponent },
   { path: 'student/list', component: PersonListComponent },
+  { path: 'student/search', component: AdvanceSearchComponent },
 ];
 
 @NgModule({

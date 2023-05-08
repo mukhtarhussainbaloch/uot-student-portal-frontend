@@ -3,7 +3,7 @@
   {
     "id":    "CONTACTS_LIST_ITEM",
     "label": "Profile",
-    "icon":  "person",
+    "icon":  "account_circle",
     "route": "student/profile"
   },
   {
@@ -15,7 +15,7 @@
   {
     "id":    "CONTACTS_LIST_ITEM",
     "label": "Finance",
-    "icon":  "account_balance",
+    "icon":  "attach_money",
     "route": "student/finance"
   },
   {

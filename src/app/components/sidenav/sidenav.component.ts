@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {SidenavRoute} from "../../models/models";
-import {ConfigService} from "../../services/config.service";
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { SidenavRoute } from '../../models/models';
+import { ConfigService } from '../../services/config.service';
+import { MatSidenav } from '@angular/material/sidenav';
 
 const MY_WORK_ROUTES = 'my-work-routes';
 const CUSTOMER_ROUTES = 'customers-routes';
@@ -12,30 +13,36 @@ const STUDENT_ROUTES = 'student-routes';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
 })
-export class SidenavComponent implements OnInit{
+export class SidenavComponent implements OnInit {
   public myWorkRoutes: SidenavRoute[] | undefined;
   public customerRoutes: SidenavRoute[] | undefined;
   public studentRoutes: SidenavRoute[] | undefined;
+  showDrawer: boolean = true;
+  @ViewChild('sidenav') sidenav: MatSidenav = {} as MatSidenav;
 
-  constructor(private configService: ConfigService) {
+  @HostListener('window:resize', ['$event'])
+  onResize(event: { target: { innerWidth: number } }) {
+    if (event.target.innerWidth < 500) {
+      this.sidenav.close();
+    }
   }
 
-  async loadNavListItems() {
+  constructor(private configService: ConfigService) {}
 
-    this.configService.get(MY_WORK_ROUTES).subscribe(data => {
+  async loadNavListItems() {
+    this.configService.get(MY_WORK_ROUTES).subscribe((data) => {
       this.myWorkRoutes = data;
     });
 
-    this.configService.get(CUSTOMER_ROUTES).subscribe(data => {
-      this.customerRoutes = data
+    this.configService.get(CUSTOMER_ROUTES).subscribe((data) => {
+      this.customerRoutes = data;
     });
 
-    this.configService.get(STUDENT_ROUTES).subscribe(data => {
+    this.configService.get(STUDENT_ROUTES).subscribe((data) => {
       this.studentRoutes = data;
     });
-
   }
 
   ngOnInit(): void {

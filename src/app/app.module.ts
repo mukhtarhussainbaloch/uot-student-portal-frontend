@@ -40,6 +40,7 @@ import { PersonListComponent } from './components/person-list/person-list.compon
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AdvanceSearchComponent } from './components/advance-search/advance-search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { MatSortModule } from '@angular/material/sort';
     StudentSemesterFeeComponent,
     PaymentComponent,
     PersonListComponent,
+    AdvanceSearchComponent,
   ],
   imports: [
     BrowserModule,
