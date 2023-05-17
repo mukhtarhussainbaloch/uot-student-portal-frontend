@@ -91,7 +91,7 @@ export class PersonInfoService {
       // })
       map((res: any) => {
         console.log(res.page);
-        return new PagedPerson(res['_embedded'].personList, res.page);
+        return new PagedPerson(res['_embedded'].personDtoList, res.page);
       }),
       catchError((err) => this.handleError(err))
     );

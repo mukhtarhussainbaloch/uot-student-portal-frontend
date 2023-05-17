@@ -1,6 +1,6 @@
 <div class="flex items-center justify-center flex-col  ">
       <div class="flex flex-col">
-        <table mat-table [dataSource]="courses" class="mat-elevation-z8" >
+        <table mat-table [dataSource]="semesterResult.subjectResults" class="mat-elevation-z8" >
           <ng-container matColumnDef="id" >
             <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> No. </th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -20,15 +20,15 @@
           <!-- Weight Column -->
           <ng-container matColumnDef="courseTitle">
             <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Course Title </th>
-            <td mat-cell *matCellDef="let element"> {{element.courseTitle}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-300">
               <div class="font-semibold">Summary</div>
             </td>
           </ng-container>
           <!-- Symbol Column -->
           <ng-container matColumnDef="creditHourses">
-            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Credit Hourses</th>
-            <td mat-cell *matCellDef="let element"> {{element.creditHourses}} </td>
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Credit Hours</th>
+            <td mat-cell *matCellDef="let element"> {{element.creditHours}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-200">
               <div class="flex flex-col">
                 <div class="font-semibold">&Sigma;</div>
@@ -41,7 +41,7 @@
           <!-- Symbol Column -->
           <ng-container matColumnDef="obtainedMarks">
             <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Obtained Marks </th>
-            <td mat-cell *matCellDef="let element"> {{element.obtainedMarks}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.finalTermMarks + element.midTermMarks + element.sessionalMarks}} </td>
             <td mat-footer-cell *matFooterCellDef class="!bg-neutral-200" >
               <div class="flex flex-col">
                 <div class="font-semibold">&Sigma;</div>
@@ -109,7 +109,7 @@
           <ng-container matColumnDef="header-row-first-group">
             <th mat-header-cell *matHeaderCellDef
                 [attr.colspan]="9"    [style.text-align]="'center'" class="font-bold">
-              {{semester}} Semester
+              Semester {{semester}}
             </th>
           </ng-container>
 

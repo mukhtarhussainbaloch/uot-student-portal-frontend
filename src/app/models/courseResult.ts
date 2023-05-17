@@ -1,12 +1,12 @@
-export interface Course{
+export interface CourseResult {
   id: string;
   courseCode: string;
   courseTitle: string;
-  creditHourses: number;
+  creditHours: number;
   obtainedMarks: number;
   totalMarks: number;
   grade: string;
-  semester: string;
+  semesterNo: string;
   gradePoint: number;
   gradePoints: number;
 }

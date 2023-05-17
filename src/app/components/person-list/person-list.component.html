@@ -79,13 +79,13 @@
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef mat-sort-header class="!bg-neutral-200 font-semibold "></mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <button mat-icon-button color="primary" class="nav-item nav-link-edit" [routerLink]="['/student/',row.id,]">
+          <button mat-icon-button color="primary" class="nav-item nav-link-edit" [routerLink]="['/student/profile',row.id,]">
             <mat-icon>launch</mat-icon>
           </button>
           <button mat-icon-button color="warn" class="nav-item nav-link-edit" (click)="onDelete(row)">
             <mat-icon>delete</mat-icon>
           </button>
-          <button mat-icon-button color="warn" class="nav-item nav-link-edit" [routerLink]="['/employee/profile',row.id]">
+          <button mat-icon-button color="warn" class="nav-item nav-link-edit" [routerLink]="['/student/profile',row.id]">
             <mat-icon>forward</mat-icon>
           </button>
         </mat-cell>

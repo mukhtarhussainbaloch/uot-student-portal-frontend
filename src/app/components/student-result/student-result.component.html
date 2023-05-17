@@ -6,10 +6,14 @@
   <hr>
   <mat-card-content>
     <div class="flex flex-col py-3 ">
-      <app-semester-result [semester]="'First'" class="flex py-5" ></app-semester-result>
-      <app-semester-result [semester]="'Second'" class="flex py-5"></app-semester-result>
-      <app-semester-result [semester]="'Third'" class="flex pb-5"></app-semester-result>
-      <app-semester-result [semester]="'Fourth'" class="flex pb-5"></app-semester-result>
+      <ng-template ngFor let-semesterResult [ngForOf]="semesterResult">
+        <app-semester-result [semesterResult]="semesterResult" [semester]="semesterResult.semester" class="flex py-5" ></app-semester-result>
+      </ng-template>
+<!--        <app-semester-result [semesterResult]="semesterResult" [semester]="semesterResult.semester" class="flex py-5" ></app-semester-result>-->
+<!--      <app-semester-result [semesterResult]="semesterResult" [semester]="1" class="flex py-5" ></app-semester-result>-->
+<!--      <app-semester-result [semester]="'Second'" class="flex py-5"></app-semester-result>-->
+<!--      <app-semester-result [semester]="'Third'" class="flex pb-5"></app-semester-result>-->
+<!--      <app-semester-result [semester]="'Fourth'" class="flex pb-5"></app-semester-result>-->
     </div>
   </mat-card-content>
 </mat-card>

@@ -10,6 +10,7 @@ import { AdvanceSearchComponent } from './components/advance-search/advance-sear
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'student/profile', component: ProfileComponent },
+  { path: 'student/profile/:id', component: ProfileComponent },
   { path: 'student/result', component: StudentResultComponent },
   { path: 'student/finance', component: StudentFeeComponent },
   { path: 'student/list', component: PersonListComponent },

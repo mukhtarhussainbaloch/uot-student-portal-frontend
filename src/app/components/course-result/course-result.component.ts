@@ -1,14 +1,23 @@
-import {Component, Input} from '@angular/core';
-import {Course} from "../../models/course";
+import { Component, Input } from '@angular/core';
+import { CourseResult } from '../../models/courseResult';
 @Component({
   selector: 'app-course-result',
   templateUrl: './course-result.component.html',
-  styleUrls: ['./course-result.component.css']
+  styleUrls: ['./course-result.component.css'],
 })
 export class CourseResultComponent {
   @Input()
-  course: Course | undefined;
+  course: CourseResult | undefined;
   @Input()
-  displayedColumns = ['courseCode', 'courseTitle', 'creditHourses', 'obtainedMarks', 'totalMarks', 'grade', 'semester', 'gradePoint', 'gradePoints'];
-
+  displayedColumns = [
+    'courseCode',
+    'courseTitle',
+    'creditHourses',
+    'obtainedMarks',
+    'totalMarks',
+    'grade',
+    'semester',
+    'gradePoint',
+    'gradePoints',
+  ];
 }
