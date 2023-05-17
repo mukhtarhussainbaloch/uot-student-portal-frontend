@@ -10,8 +10,8 @@
 
           <!-- Name Column -->
           <ng-container matColumnDef="courseCode">
-            <th mat-header-cell *matHeaderCellDef class="!bg-neutral-200 font-semibold " > Course Code </th>
-            <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
+            <th mat-header-cell *matHeaderCellDef class="!bg-neutral-200 !text-center font-semibold " > Course Code </th>
+            <td mat-cell *matCellDef="let element"  class="!text-center !break-words !w-28"> {{element.courseCode}} </td>
             <td mat-footer-cell *matFooterCellDef >
 
             </td>
@@ -20,15 +20,15 @@
           <!-- Weight Column -->
           <ng-container matColumnDef="courseTitle">
             <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Course Title </th>
-            <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+            <td mat-cell *matCellDef="let element"  class="!break-words w-64"> {{element.courseName}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-300">
               <div class="font-semibold">Summary</div>
             </td>
           </ng-container>
           <!-- Symbol Column -->
           <ng-container matColumnDef="creditHourses">
-            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Credit Hours</th>
-            <td mat-cell *matCellDef="let element"> {{element.creditHours}} </td>
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 !text-center font-semibold "> Credit Hours</th>
+            <td mat-cell *matCellDef="let element" class="!break-words !text-center w-4"> {{element.creditHours}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-200">
               <div class="flex flex-col">
                 <div class="font-semibold">&Sigma;</div>
@@ -40,8 +40,8 @@
           </ng-container>
           <!-- Symbol Column -->
           <ng-container matColumnDef="obtainedMarks">
-            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Obtained Marks </th>
-            <td mat-cell *matCellDef="let element"> {{element.finalTermMarks + element.midTermMarks + element.sessionalMarks}} </td>
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 !text-center font-semibold "> Obtained Marks </th>
+            <td mat-cell *matCellDef="let element" class="!break-words !text-center w-4"> {{element.finalTermMarks + element.midTermMarks + element.sessionalMarks}} </td>
             <td mat-footer-cell *matFooterCellDef class="!bg-neutral-200" >
               <div class="flex flex-col">
                 <div class="font-semibold">&Sigma;</div>
@@ -53,8 +53,8 @@
           </ng-container>
           <!-- Name Column -->
           <ng-container matColumnDef="totalMarks">
-            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold "> Total Marks  </th>
-            <td mat-cell *matCellDef="let element"> {{element.totalMarks}} </td>
+            <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 !text-center font-semibold "> Total Marks  </th>
+            <td mat-cell *matCellDef="let element" class="!break-words !text-center w-4"> {{element.totalMarks}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-neutral-200">
               <div class="flex flex-col">
                 <div class="font-semibold">&Sigma;</div>
@@ -67,7 +67,7 @@
           <!-- Symbol Column -->
           <ng-container matColumnDef="grade">
             <th mat-header-cell *matHeaderCellDef  class="!bg-neutral-200 font-semibold !text-center "> Grade </th>
-            <td mat-cell *matCellDef="let element" class="!text-center"> {{element.grade}} </td>
+            <td mat-cell *matCellDef="let element" class="!text-center !break-words w-4"> {{element.grade}} </td>
             <td mat-footer-cell *matFooterCellDef  class="!bg-teal-700 text-white" >
              <div class="flex flex-col">
                <div class="font-semibold ">GPA</div>
